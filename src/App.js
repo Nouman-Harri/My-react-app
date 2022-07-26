@@ -38,7 +38,7 @@ function App() {
       <Alert Alert={alert} />
       {/* <Navbar /> */}
       <div className="container my-3">
-        {/* <About /> */}
+        <About />
         <TextForm heading="Enter the text to anaylize below" mode={mode} />
       </div>
     </>
