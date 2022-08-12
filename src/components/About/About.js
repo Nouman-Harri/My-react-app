@@ -19,6 +19,8 @@ export default function About(props) {
             <button
               className="accordion-button"
               // style={myStyle}
+
+              
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#collapseOne"
