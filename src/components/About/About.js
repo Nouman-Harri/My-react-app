@@ -10,6 +10,10 @@ export default function About(props) {
     backgroundColor: props.mode === 'dark'?'#0d94fd6b':'white',
   }
 
+
+
+
+  
   return (
     <div className="container">
       <h2 className="my-3">About Us</h2>
