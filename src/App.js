@@ -1,10 +1,11 @@
 import { useState } from "react";
 import "./App.css";
-import About from "./components/About";
-import Navbar from "./components/Navbar";
-import TextForm from "./components/TextForm";
-import Alert from "./components/Alert";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import About from "./components/About/About";
+import Navbar from "./components/Navbar/Navbar";
+import TextForm from "./components/TextForm/TextForm";
+import Alert from "./components/Alert/Alert";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React from "react";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -43,25 +44,30 @@ function App() {
     <>
       <Router>
         <Navbar
-          title="Harry"
+          title="TextEditor"
           aboutText="About"
           mode={mode}
           toggleMode={toggleMode}
         />
         <Alert alert={alert} />
-        <div className="container my-3">{/* <About /> */}</div>
-        <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/">
-            <TextForm
-              showAlert={showAlert}
-              heading="Enter the text to anaylize below"
-              mode={mode}
-            />
-          </Route>
-        </Switch>
+        <div className="container my-3">
+          {/* switch is replaced by routes  */}
+          {/* exact is used to follow the proper path */}
+          <Routes>
+            <Route excat path="/about" element={<About mode={mode} />}></Route>
+            <Route
+              excat
+              path="/"
+              element={
+                <TextForm
+                  showAlert={showAlert}
+                  heading="Enter the text to anaylize below"
+                  mode={mode}
+                />
+              }
+            ></Route>
+          </Routes>
+        </div>
       </Router>
     </>
   );

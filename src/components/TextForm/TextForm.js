@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function TextForm(props) {
+export default function TextForm(props) { 
   // this function is for to convert the data into uppercase
   const handlerUpClick = () => {
     let newText = text.toUpperCase();
@@ -61,19 +61,19 @@ export default function TextForm(props) {
             rows="6"
           ></textarea>
         </div>
-        <button className="btn btn-primary mx-1" onClick={handlerUpClick}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handlerUpClick}>
           Convert to upperCase
         </button>
-        <button className="btn btn-primary mx-1" onClick={handlerLoClick}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handlerLoClick}>
           Convert to LowerCase
         </button>
-        <button className="btn btn-primary mx-1" onClick={handlerClearClick}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handlerClearClick}>
           Clear text
         </button>
-        <button className="btn btn-primary mx-1" onClick={handleCopy}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleCopy}>
           Copy text
         </button>
-        <button className="btn btn-primary mx-1" onClick={handelExtraSpace}>
+        <button className="btn btn-primary mx-1 my-1" onClick={handelExtraSpace}>
           Remove extra spaces
         </button>
       </div>
@@ -83,7 +83,7 @@ export default function TextForm(props) {
       >
         <h2>your text summary</h2>
         <p>
-          {text.split(" ").length} words and {text.length} characters
+          {text.split(" ").filter((element)=> {return element.length!==0}).length} words and {text.length} characters
         </p>
         <p>{0.008 * text.split(" ").length} minutes to read</p>
         <h2>Preview</h2>
