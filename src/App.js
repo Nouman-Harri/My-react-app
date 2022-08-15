@@ -20,18 +20,39 @@ function App() {
       setAlert(null);
     }, 1500);
   };
-  const removeBodyClasses = ()=>{
-    document.body.classList.remove('bg-light')
-    document.body.classList.remove('bg-warning')
-    document.body.classList.remove('bg-success')
-    document.body.classList.remove('bg-dark')
-    document.body.classList.remove('bg-danger')
-  }
-   
+  const removeBodyClasses = () => {
+    document.body.classList.remove("bg-light");
+    document.body.classList.remove("bg-warning");
+    document.body.classList.remove("bg-success");
+    document.body.classList.remove("bg-dark");
+    document.body.classList.remove("bg-danger");
+  };
+  const [textColor, setTextColor] = useState("black");
 
   const toggleMode = (cls) => {
     removeBodyClasses();
-    document.body.classList.add('bg-'+ cls)
+    switch (cls) {
+      case "primary":
+        setTextColor("white");
+        break;
+      case "danger":
+        setTextColor("primary");
+        break;
+      case "success":
+        setTextColor("danger");
+        break;
+      case "warning":
+        setTextColor("success");
+        break;
+      case "light":
+        setTextColor("warning");
+        break;
+      case "dark":
+        setTextColor("white");
+        break;
+      default:
+    }
+    document.body.classList.add("bg-" + cls);
     if (mode === "light") {
       setMode("dark");
       document.body.style.backgroundColor = "#183969";
@@ -56,6 +77,7 @@ function App() {
         <Navbar
           title="TextEditor"
           aboutText="About"
+          textColor={textColor}
           mode={mode}
           toggleMode={toggleMode}
         />

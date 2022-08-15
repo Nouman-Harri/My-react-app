@@ -9,11 +9,9 @@ export default function Navbar(props) {
       <nav
         className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}` }
       >
-        <div className="container-fluid">
+        <div className="container-fluid"> 
           <Link
-            className={`navbar-brand text-${
-              props.mode === "light" ? "dark" : "light"
-            } `}
+            className={`navbar-brand text-${props.textColor} `}
             to="/"
           >
             {props.title}
@@ -33,9 +31,7 @@ export default function Navbar(props) {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <Link
-                  className={`nav-Link active text-${
-                    props.mode === "light" ? "dark" : "light"
-                  }`}
+                  className={`nav-Link active text-${props.textColor}`}
                   aria-current="page"
                   to="/"
                 >
@@ -44,9 +40,7 @@ export default function Navbar(props) {
               </li>
               <li className="nav-item">
                 <Link
-                  className={`nav-Link text-${
-                    props.mode === "light" ? "dark" : "light"
-                  }`}
+                  className={`nav-Link text-${props.textColor}`}
                   to="/about"
                 >
                   {props.aboutText}
