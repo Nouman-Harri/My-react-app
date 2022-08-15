@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import "./Navbar.css";
 
 export default function Navbar(props) {
   return (
     <>
       <nav
-        className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}
+        className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}` }
       >
         <div className="container-fluid">
           <Link
@@ -53,35 +53,49 @@ export default function Navbar(props) {
                 </Link>
               </li>
             </ul>
-            {/* <form className="d-flex" role="search">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button className="btn btn-primary" type="submit">
-                Search
-              </button>
-            </form> */}
-            <div
-              className={`form-check form-switch text-${
-                props.mode === "light" ? "dark" : "light"
-              }`}
-            >
-              <input
-                className="form-check-input"
-                onClick={props.toggleMode}
-                type="checkbox"
-                role="switch"
-                id="flexSwitchCheckDefault"
-              />
-              <label
-                className="form-check-label"
-                htmlFor="flexSwitchCheckDefault"
-              >
-                Enable dark mode
-              </label>
+            <div className="d-flex">
+              <div
+                className="bg-primary rounded mx-2"
+                onClick={() => {
+                  props.toggleMode("primary");
+                }}
+                style={{ height: "30px", width: "30px", cursor: "pointer" }}
+              ></div>
+              <div
+                className="bg-danger rounded mx-2"
+                onClick={() => {
+                  props.toggleMode("danger");
+                }}
+                style={{ height: "30px", width: "30px", cursor: "pointer" }}
+              ></div>
+              <div
+                className="bg-success rounded mx-2"
+                onClick={() => {
+                  props.toggleMode("success");
+                }}
+                style={{ height: "30px", width: "30px", cursor: "pointer" }}
+              ></div>
+              <div
+                className="bg-warning rounded mx-2"
+                onClick={() => {
+                  props.toggleMode("warning");
+                }}
+                style={{ height: "30px", width: "30px", cursor: "pointer" }}
+              ></div>
+              <div
+                className="bg-light rounded mx-2"
+                onClick={() => {
+                  props.toggleMode("light");
+                }}
+                style={{ height: "30px", width: "30px", cursor: "pointer", border: '2px solid' }}
+              ></div>
+              <div
+                className="bg-dark rounded mx-2"
+                onClick={() => {
+                  props.toggleMode("dark");
+                }}
+                style={{ height: "30px", width: "30px", cursor: "pointer" }}
+              ></div>
             </div>
           </div>
         </div>
@@ -90,11 +104,11 @@ export default function Navbar(props) {
   );
 }
 
-// Navbar.propTypes = {
-//   title: PropTypes.string.isRequired,
-//   aboutText: PropTypes.string.isRequired,
-// };
-// Navbar.defaultProps = {
-//   title: "set title here",
-//   aboutText: "about text here",
-// };
+Navbar.propTypes = {
+  title: PropTypes.string.isRequired,
+  aboutText: PropTypes.string.isRequired,
+};
+Navbar.defaultProps = {
+  title: "set title here",
+  aboutText: "about text here",
+};
