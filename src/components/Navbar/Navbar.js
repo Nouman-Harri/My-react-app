@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import "./Navbar.css";
 
 export default function Navbar(props) {
-  return (
+   return (
     <>
       <nav
         className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}` }
@@ -31,7 +31,7 @@ export default function Navbar(props) {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <Link
-                  className={`nav-Link active text-${props.textColor}`}
+                  className={`nav-Link text-${props.textColor}`}
                   aria-current="page"
                   to="/"
                 >
@@ -48,7 +48,7 @@ export default function Navbar(props) {
               </li>
             </ul>
             <div className="d-flex">
-              <div
+              {/* <div
                 className="bg-primary rounded mx-2"
                 onClick={() => {
                   props.toggleMode("primary");
@@ -75,7 +75,7 @@ export default function Navbar(props) {
                   props.toggleMode("warning");
                 }}
                 style={{ height: "30px", width: "30px", cursor: "pointer" }}
-              ></div>
+              ></div> */}
               <div
                 className="bg-light rounded mx-2"
                 onClick={() => {

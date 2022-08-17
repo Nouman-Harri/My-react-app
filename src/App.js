@@ -33,7 +33,7 @@ function App() {
     removeBodyClasses();
     switch (cls) {
       case "primary":
-        setTextColor("white");
+        setTextColor("danger");
         break;
       case "danger":
         setTextColor("primary");
@@ -57,18 +57,10 @@ function App() {
       setMode("dark");
       document.body.style.backgroundColor = "#183969";
       showAlert("Dark mode has been enabled", "sucess");
-      // document.title = "Harry - Dark mode";
-      // setInterval(() => {
-      //   document.title = "install my app";
-      // }, 2000);
-      // setInterval(() => {
-      //   document.title = "subscribe my app";
-      // }, 1000);
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
       showAlert("Light mode has been enabled", "sucess");
-      // document.title = "Harry - Light mode";
     }
   };
   return (

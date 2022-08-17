@@ -24,10 +24,7 @@ export default function TextForm(props) {
   };
   // this function is for the copy the text
   const handleCopy = () => {
-    var text = document.getElementById("myBox");
-    text.select(); 
-    navigator.clipboard.writeText(text.value);
-    document.getSelection().removeAllRanges();
+    navigator.clipboard.writeText(text);
     props.showAlert("texted copied", "sucess");
   };
   //  this function is to remove the extra spacres that have been added into the text
@@ -105,7 +102,7 @@ export default function TextForm(props) {
         <h2>your text summary</h2>
         <p>
           {
-            text.split(" ").filter((element) => {
+            text.split(/\S+/).filter((element) => {
               return element.length !== 0;
             }).length
           }{" "}
